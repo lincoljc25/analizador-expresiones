@@ -178,12 +178,13 @@ export default function Home() {
                   <p className="text-sm text-slate-400 mb-4">
                     Asigna valores a las variables detectadas:
                   </p>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-4">
                     {Object.entries(variables).map(([key, value]) => (
-                      <div key={key} className="flex items-center gap-2">
-                        <label className="font-mono text-lg text-yellow-400 w-8">
+                      <div key={key} className="flex items-center justify-center gap-2">
+                        <label className="font-mono text-lg text-yellow-400 w-6 text-right">
                           {key}:
                         </label>
+                        {/* Input con ancho fijo para que no se estire */}
                         <input
                           type="number"
                           value={value}
@@ -193,7 +194,7 @@ export default function Home() {
                               [key]: Number(e.target.value),
                             })
                           }
-                          className="flex-1 p-2 bg-slate-700 rounded-lg border border-slate-600 focus:outline-none focus:border-cyan-500 font-mono"
+                          className="w-20 p-2 bg-slate-700 rounded-lg border border-slate-600 focus:outline-none focus:border-cyan-500 font-mono text-center"
                         />
                       </div>
                     ))}
